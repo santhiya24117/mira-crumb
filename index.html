@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIRA & CRUMB | Artisan Bakes & Pâtisserie</title>
+    <meta name="description" content="Handcrafted cakes, pastries and artisan breads made for life's sweetest moments. Discover MIRA & CRUMB." />
+    <meta property="og:title" content="MIRA & CRUMB | Artisan Bakes & Pâtisserie" />
+    <meta property="og:description" content="Handcrafted cakes, pastries and artisan breads made for life's sweetest moments. Discover MIRA & CRUMB." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Suppress benign dev-server HMR websocket disconnection error in cloud container preview
+      (function() {
+        function isBenignWsError(err) {
+          if (!err) return false;
+          var str = String((err && (err.message || err.reason || err.stack || err)) || '');
+          return str.includes('WebSocket') || str.includes('websocket') || str.includes('[vite]') || str.includes('closed without opened');
+        }
+
+        var origConsoleError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var joined = args.map(function(a) { return String(a && a.message ? a.message : a); }).join(' ');
+          if (isBenignWsError(joined)) {
+            return;
+          }
+          origConsoleError.apply(console, args);
+        };
+
+        var origConsoleWarn = console.warn;
+        console.warn = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var joined = args.map(function(a) { return String(a && a.message ? a.message : a); }).join(' ');
+          if (isBenignWsError(joined)) {
+            return;
+          }
+          origConsoleWarn.apply(console, args);
+        };
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isBenignWsError(event && event.reason)) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+
+        window.addEventListener('error', function(event) {
+          if (isBenignWsError(event && (event.message || event.error))) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F7F3F5] text-[#292129] antialiased selection:bg-[#4A263F] selection:text-[#F7F3F5]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

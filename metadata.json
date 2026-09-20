@@ -1,0 +1,6 @@
+{
+  "name": "MIRA & CRUMB — Artisan Bakes & Pâtisserie",
+  "description": "Handcrafted cakes, pastries and artisan breads made for life's sweetest moments. Discover MIRA & CRUMB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
